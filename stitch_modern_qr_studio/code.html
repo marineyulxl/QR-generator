@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#2f2ebe",
+                    "surface-dim": "#d9d9e5",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "surface-variant": "#e1e2ed",
+                    "outline": "#737686",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#c3c6d7",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#eeefff",
+                    "primary-container": "#2563eb",
+                    "inverse-primary": "#b4c5ff",
+                    "on-surface": "#191b23",
+                    "background": "#faf8ff",
+                    "surface-container": "#ededf9",
+                    "on-tertiary-fixed": "#360f00",
+                    "tertiary-fixed": "#ffdbcd",
+                    "primary": "#004ac6",
+                    "surface-bright": "#faf8ff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#07006c",
+                    "on-surface-variant": "#434655",
+                    "secondary-container": "#6063ee",
+                    "surface-tint": "#0053db",
+                    "on-primary-fixed": "#00174b",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-low": "#f3f3fe",
+                    "secondary-fixed-dim": "#c0c1ff",
+                    "inverse-on-surface": "#f0f0fb",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2e3039",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "tertiary": "#943700",
+                    "on-secondary-container": "#fffbff",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#ffede6",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "surface": "#faf8ff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e1e2ed",
+                    "tertiary-container": "#bc4800",
+                    "on-background": "#191b23",
+                    "secondary": "#4648d4",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#e1e0ff",
+                    "surface-container-high": "#e7e7f3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "xs": "8px",
+                    "base": "4px",
+                    "layout_split": "40/60"
+            },
+            "fontFamily": {
+                    "label": ["Inter"],
+                    "h1": ["Inter"],
+                    "h2": ["Inter"],
+                    "body": ["Inter"],
+                    "small": ["Inter"]
+            },
+            "fontSize": {
+                    "label": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "h2": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "body": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "small": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .qr-gradient {
+            background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="bg-surface border-b border-outline-variant flex justify-between items-center w-full px-lg h-16 sticky top-0 z-50">
+<div class="flex items-center gap-md">
+<span class="text-h2 font-h2 font-semibold text-on-surface">QR Studio Pro</span>
+<nav class="hidden md:flex ml-xl gap-lg">
+<a class="text-primary font-semibold border-b-2 border-primary pb-2 font-label text-label" href="#">仪表盘 Dashboard</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label text-label" href="#">历史 History</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label text-label" href="#">模板 Templates</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label text-label" href="#">分析 Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">help</span>
+</div>
+</header>
+<main class="flex-grow flex overflow-hidden">
+<!-- Left Pane: Control Panel (40%) -->
+<aside class="w-[40%] bg-surface border-r border-outline-variant overflow-y-auto px-lg py-lg space-y-lg">
+<!-- Logo Card -->
+<section class="bg-white border border-outline-variant rounded-xl p-lg shadow-sm">
+<h3 class="font-h2 text-h2 mb-md text-on-surface">Logo</h3>
+<div class="flex items-start gap-lg">
+<div class="w-[100px] h-[100px] bg-surface-container rounded-lg flex items-center justify-center border border-dashed border-outline">
+<span class="material-symbols-outlined text-outline text-3xl">image</span>
+</div>
+<div class="flex flex-col gap-sm flex-grow">
+<button class="h-11 flex items-center justify-center gap-xs px-md rounded-lg border border-outline-variant text-on-surface font-semibold hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-sm">upload</span><span>上传 Logo Upload Logo</span></button>
+<button class="h-11 flex items-center justify-center gap-xs px-md rounded-lg border border-outline-variant text-on-surface font-semibold hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-sm">grid_view</span><span>Logo 图库 Gallery</span></button>
+</div>
+</div>
+</section>
+<!-- Pattern Card -->
+<section class="bg-white border border-outline-variant rounded-xl p-lg shadow-sm">
+<h3 class="font-h2 text-h2 mb-md text-on-surface">码点码眼</h3>
+<div class="grid grid-cols-2 gap-lg">
+<div class="space-y-md">
+<div>
+<label class="block font-label text-label text-on-surface-variant mb-xs">Color</label>
+<select class="w-full h-10 px-sm bg-surface-container-low border border-outline-variant rounded-lg focus:border-primary focus:ring-0">
+<option>Black</option>
+</select>
+</div>
+<div>
+<label class="block font-label text-label text-on-surface-variant mb-xs">Shape</label>
+<select class="w-full h-10 px-sm bg-surface-container-low border border-outline-variant rounded-lg focus:border-primary focus:ring-0">
+<option>Normal</option>
+</select>
+</div>
+<div class="flex items-center gap-xs mt-md">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" id="eye-color" type="checkbox"/>
+<label class="font-body text-body text-on-surface-variant" for="eye-color">Eye Color</label>
+</div>
+</div>
+<div class="space-y-md">
+<div>
+<label class="block font-label text-label text-on-surface-variant mb-xs">BG Color</label>
+<select class="w-full h-10 px-sm bg-surface-container-low border border-outline-variant rounded-lg focus:border-primary focus:ring-0">
+<option>White</option>
+</select>
+</div>
+<div>
+<label class="block font-label text-label text-on-surface-variant mb-xs">Eye Shape</label>
+<select class="w-full h-10 px-sm bg-surface-container-low border border-outline-variant rounded-lg focus:border-primary focus:ring-0">
+<option>Square</option>
+</select>
+</div>
+</div>
+</div>
+</section>
+<!-- Advanced Card -->
+<section class="bg-white border border-outline-variant rounded-xl p-lg shadow-sm">
+<h3 class="font-h2 text-h2 mb-md text-on-surface">更多</h3>
+<div class="grid grid-cols-2 gap-lg mb-md">
+<div>
+<label class="block font-label text-label text-on-surface-variant mb-xs">Margin</label>
+<input class="w-full h-10 px-sm bg-surface-container-low border border-outline-variant rounded-lg focus:border-primary focus:ring-0 font-body text-body" type="text" value="2 blocks"/>
+</div>
+<div>
+<label class="block font-label text-label text-on-surface-variant mb-xs">Error Correction</label>
+<input class="w-full h-10 px-sm bg-surface-container-low border border-outline-variant rounded-lg focus:border-primary focus:ring-0 font-body text-body" type="text" value="25%"/>
+</div>
+<div>
+<label class="block font-label text-label text-on-surface-variant mb-xs">Version</label>
+<input class="w-full h-10 px-sm bg-surface-container-low border border-outline-variant rounded-lg focus:border-primary focus:ring-0 font-body text-body" type="number" value="1"/>
+</div>
+</div>
+<div>
+<label class="block font-label text-label text-on-surface-variant mb-xs">Content</label>
+<textarea class="w-full px-sm py-sm bg-surface-container-low border border-outline-variant rounded-lg focus:border-primary focus:ring-0 font-body text-body h-24 resize-none">1</textarea>
+</div>
+</section>
+<!-- Output Style Card -->
+<section class="bg-white border border-outline-variant rounded-xl p-lg shadow-sm">
+<h3 class="font-h2 text-h2 mb-md text-on-surface">输出样式</h3>
+<div class="flex bg-surface-container-low rounded-lg p-1">
+<button class="flex-1 py-xs text-label font-label rounded-md bg-white shadow-sm text-primary">Pure Image</button>
+<button class="flex-1 py-xs text-label font-label rounded-md text-on-surface-variant hover:text-on-surface transition-colors">With Text</button>
+</div>
+</section>
+<!-- Action Area -->
+<div class="flex flex-col gap-md pt-lg pb-xl">
+<button class="h-11 w-full bg-primary-container text-on-primary-container rounded-lg font-semibold text-label hover:opacity-95 active:scale-95 transition-all shadow-md">生成二维码 Generate QR</button>
+<button class="h-11 w-full bg-white border border-outline-variant text-on-surface rounded-lg font-semibold text-label hover:bg-surface-container-low active:scale-95 transition-all">下载二维码 Download</button>
+</div>
+</aside>
+<!-- Right Pane: Preview Area (60%) -->
+<section class="w-[60%] bg-[#F8FAFC] flex flex-col items-center justify-center p-xl relative">
+<div class="w-full max-w-lg bg-white border border-outline-variant rounded-xl shadow-xl p-xl flex flex-col items-center gap-lg">
+<div class="qr-gradient w-full aspect-square rounded-lg flex flex-col items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-[120px] text-outline-variant mb-md">qr_code_2</span>
+<p class="text-on-surface-variant font-body text-body text-center max-w-xs px-lg">
+                        Set content and click generate
+                    </p>
+</div>
+<div class="w-full grid grid-cols-3 gap-md border-t border-outline-variant pt-lg">
+<button class="flex items-center justify-center gap-xs py-xs border border-outline-variant rounded-lg text-small font-label hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-body">download</span>下载 PNG</button>
+<button class="flex items-center justify-center gap-xs py-xs border border-outline-variant rounded-lg text-small font-label hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-body">code</span>下载 SVG</button>
+<button class="flex items-center justify-center gap-xs py-xs border border-outline-variant rounded-lg text-small font-label hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-body">print</span>打印 Print</button>
+</div>
+</div>
+<div class="absolute bottom-lg right-lg">
+<p class="text-small font-small text-outline">v2.4.0 High Precision Engine</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant w-full py-lg px-xl flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="flex flex-col items-start gap-xs">
+<span class="text-label font-label font-bold text-on-surface">QR Studio Pro</span>
+<p class="font-body text-body text-on-surface-variant">© 2024 QR Studio Pro. All rights reserved.</p>
+</div>
+<div class="flex gap-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body text-body" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body text-body" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body text-body" href="#">Support</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body text-body" href="#">API Docs</a>
+</div>
+</footer>
+</body></html>
