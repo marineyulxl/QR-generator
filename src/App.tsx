@@ -8,7 +8,7 @@ export default function App() {
   const studio = useQrStudio();
 
   return (
-    <div className="bg-surface text-on-surface flex min-h-screen flex-col">
+    <div className="bg-surface text-on-surface flex h-full min-h-0 flex-col overflow-hidden">
       <AppHeader />
       <main className="flex min-h-0 flex-1 flex-col overflow-hidden min-[1024px]:flex-row">
         <ControlPanel

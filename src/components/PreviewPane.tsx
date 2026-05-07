@@ -22,11 +22,12 @@ export const PreviewPane = memo(function PreviewPane(props: Props) {
       : '';
 
   return (
-    <section className="bg-stage-bg relative flex min-h-[480px] min-w-0 flex-1 flex-col items-center justify-center p-8 min-[1024px]:w-[60%]">
-      <div
-        id="print-area"
-        className="border-outline-variant flex w-full max-w-lg flex-col items-center gap-6 rounded-[var(--radius-card)] border bg-white p-8 shadow-xl"
-      >
+    <section className="bg-stage-bg relative flex min-h-0 min-w-0 flex-1 flex-col overflow-y-auto overflow-x-hidden min-[1024px]:h-full min-[1024px]:w-[60%]">
+      <div className="flex min-h-full w-full flex-1 flex-col items-center justify-center px-4 py-6 sm:px-8 sm:py-8">
+        <div
+          id="print-area"
+          className="border-outline-variant flex w-full max-w-lg flex-col items-center gap-5 rounded-[var(--radius-card)] border bg-white p-6 shadow-xl sm:gap-6 sm:p-8"
+        >
         <div className="border-outline-variant qr-gradient relative flex aspect-square w-full max-w-[320px] flex-col items-center justify-center rounded-lg border">
           <div
             ref={props.qrContainerRef}
@@ -77,9 +78,10 @@ export const PreviewPane = memo(function PreviewPane(props: Props) {
         </div>
       </div>
 
-      <p className="text-outline absolute bottom-6 right-6 hidden text-xs leading-4 min-[1024px]:block print:hidden">
-        {t('preview.engineBadge')}
-      </p>
+        <p className="text-outline hidden text-center text-xs leading-4 min-[1024px]:absolute min-[1024px]:bottom-5 min-[1024px]:right-6 min-[1024px]:block min-[1024px]:text-left print:hidden">
+          {t('preview.engineBadge')}
+        </p>
+      </div>
     </section>
   );
 });

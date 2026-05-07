@@ -57,7 +57,7 @@ export const ControlPanel = memo(function ControlPanel(props: Props) {
   };
 
   return (
-    <aside className="border-outline-variant bg-surface flex w-full min-[1024px]:w-[40%] shrink-0 flex-col gap-6 overflow-y-auto border-r px-6 py-6 print:hidden">
+    <aside className="border-outline-variant bg-surface flex max-h-[45dvh] w-full shrink-0 flex-col gap-6 overflow-y-auto border-r px-5 py-5 min-[1024px]:max-h-none min-[1024px]:h-full min-[1024px]:w-[40%] min-[1024px]:max-w-[40%] min-[1024px]:shrink-0 min-[1024px]:px-6 min-[1024px]:py-6 print:hidden">
       <input
         ref={fileRef}
         type="file"
